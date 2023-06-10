@@ -13,7 +13,7 @@ const RenterModal = ({ renterDetails }) => {
   } = renterDetails;
 
   const handleApprovedRenter = (id) => {
-    fetch(`http://localhost:5000/api/v1/renter/${id}`, {
+    fetch(`https://web-park-fixer-server.onrender.com/api/v1/renter/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

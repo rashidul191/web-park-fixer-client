@@ -10,7 +10,7 @@ const Renter = ({ renterReq, index }) => {
   const [renterDetails, setRenterDetails] = useState({});
 
   const handleRenterDetails = (id) => {
-    fetch(`http://localhost:5000/api/v1/renter/${id}`, {
+    fetch(`https://web-park-fixer-server.onrender.com/api/v1/renter/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -23,7 +23,7 @@ const Renter = ({ renterReq, index }) => {
   };
 
   const handleRenterDelete = (id) => {
-    fetch(`http://localhost:5000/api/v1/renter/${id}`, {
+    fetch(`https://web-park-fixer-server.onrender.com/api/v1/renter/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

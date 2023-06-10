@@ -5,7 +5,7 @@ const AllAdmin = () => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/users", {
+    fetch("https://web-park-fixer-server.onrender.com/api/v1/users", {
       method: "GET",
       headers: {
         "content-type": "application/json",

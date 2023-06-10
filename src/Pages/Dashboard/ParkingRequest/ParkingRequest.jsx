@@ -4,7 +4,7 @@ import Parking from "./Parking";
 const ParkingRequest = () => {
   const [parkingRequest, setParkingRequest] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/parking", {
+    fetch("https://web-park-fixer-server.onrender.com/api/v1/parking", {
       method: "GET",
       headers: {
         "content-type": "application/json",

@@ -4,7 +4,7 @@ import Renter from "./Renter";
 const RenterRequest = () => {
   const [renterRequest, setRenterRequest] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/renter", {
+    fetch("https://web-park-fixer-server.onrender.com/api/v1/renter", {
       method: "GET",
       headers: {
         "content-type": "application/json",

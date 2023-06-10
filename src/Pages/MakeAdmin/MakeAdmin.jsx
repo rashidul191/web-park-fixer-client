@@ -17,7 +17,7 @@ const MakeAdmin = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/api/v1/users", {
+    fetch("https://web-park-fixer-server.onrender.com/api/v1/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

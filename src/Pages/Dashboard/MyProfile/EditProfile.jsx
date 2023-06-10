@@ -1,18 +1,18 @@
 import { useForm } from "react-hook-form";
 
 const EditProfile = ({ user }) => {
-  const {
-    register: editProfile,
-    handleSubmit,
-  } = useForm();
+  const { register: editProfile, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/api/v1/users/${user?.email}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://web-park-fixer-server.onrender.com/api/v1/users/${user?.email}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.data) {

@@ -18,7 +18,7 @@ const ParkingModal = ({ parkingDetails }) => {
   } = parkingDetails;
 
   const handleApprovedParking = (id) => {
-    fetch(`http://localhost:5000/api/v1/parking/${id}`, {
+    fetch(`https://web-park-fixer-server.onrender.com/api/v1/parking/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

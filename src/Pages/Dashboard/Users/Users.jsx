@@ -5,7 +5,7 @@ const Users = () => {
   const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/users", {
+    fetch("https://web-park-fixer-server.onrender.com/api/v1/users", {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -13,7 +13,6 @@ const Users = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-  
         setAllUsers(data.data);
       });
   }, []);
@@ -25,8 +24,6 @@ const Users = () => {
       onlyUser.push(users);
     }
   });
-
-
 
   return (
     <section className="m-5">

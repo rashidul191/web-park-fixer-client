@@ -9,7 +9,7 @@ const Parking = ({ parkingReq, index }) => {
   const [parkingDetails, setParkingDetails] = useState({});
 
   const handleParkingDetails = (id) => {
-    fetch(`http://localhost:5000/api/v1/parking/${id}`, {
+    fetch(`https://web-park-fixer-server.onrender.com/api/v1/parking/${id}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -21,9 +21,8 @@ const Parking = ({ parkingReq, index }) => {
       });
   };
 
-
   const handleParkingDelete = (id) => {
-    fetch(`http://localhost:5000/api/v1/parking/${id}`, {
+    fetch(`https://web-park-fixer-server.onrender.com/api/v1/parking/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -62,7 +61,9 @@ const Parking = ({ parkingReq, index }) => {
           <span className="badge badge-ghost badge-sm font-bold">{email}</span>
         </td>
         <td className="font-bold">
-          <p className="uppercase text-success">{request ? request : <span className="text-error">No</span>}</p>
+          <p className="uppercase text-success">
+            {request ? request : <span className="text-error">No</span>}
+          </p>
         </td>
         <td>
           <label
@@ -93,8 +94,7 @@ const Parking = ({ parkingReq, index }) => {
           >
             ✕
           </label>
-       <ParkingModal parkingDetails={parkingDetails}></ParkingModal>
-          
+          <ParkingModal parkingDetails={parkingDetails}></ParkingModal>
         </div>
       </div>
     </>
