@@ -16,7 +16,14 @@ const MakeAdmin = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (adminData) => {
+    const data = {
+      displayName: adminData?.displayName,
+      email: adminData?.email,
+      password: adminData?.password,
+      role: "admin",
+    };
+
     fetch("https://web-park-fixer-server.onrender.com/api/v1/users", {
       method: "POST",
       headers: {
@@ -27,8 +34,9 @@ const MakeAdmin = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data?.data) {
+          createUserWithEmailAndPassword(adminData?.email, adminData?.password);
           alert("Successfully Create a admin");
-          createUserWithEmailAndPassword(data?.email, data?.password);
+          window.location.reload();
         }
       });
   };
@@ -36,6 +44,7 @@ const MakeAdmin = () => {
   if (loading) {
     return <Loading></Loading>;
   }
+
   return (
     <section className="m-5">
       <h1 className="text-xl md:text-3xl font-bold uppercase">Make Admin</h1>
@@ -153,8 +162,10 @@ const MakeAdmin = () => {
                     {errors?.password?.message}
                   </span>
                 )}
-                {errors?.email?.type === "pattern" && (
-                  <span className="text-error">{errors?.email?.message}</span>
+                {errors?.password?.type === "pattern" && (
+                  <span className="text-error">
+                    {errors?.password?.message}
+                  </span>
                 )}
               </label>
             </div>

@@ -19,9 +19,9 @@ const ParkingRequest = () => {
     <section className="m-5">
       <div className="flex justify-between">
         <h1 className="text-xl md:text-3xl font-bold uppercase">
-          Render Request
+          Parking Request
         </h1>
-        <p>Total Render Request: {parkingRequest.length}</p>
+        <p>Total Parking Request: {parkingRequest.length}</p>
       </div>
       <div className="overflow-x-auto">
         <table className="table">
